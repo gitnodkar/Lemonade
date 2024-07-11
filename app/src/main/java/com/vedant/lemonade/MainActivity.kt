@@ -65,7 +65,7 @@ fun LemonApp() {
             title = {
                 Text(
                     text = "Lemonade",
-                    fontWeight = FontWeight.ExtraBold
+                    fontWeight = FontWeight.Bold
                 )
             },
             colors = TopAppBarDefaults.largeTopAppBarColors(containerColor = Color.Yellow)
@@ -81,7 +81,7 @@ fun LemonApp() {
                     LemonTextAndImage(
                         textLabel = R.string.One,
                         drawableResource = R.drawable.lemon_tree,
-                        ContentDescription = R.string.Lemon,
+                        contentDescription = R.string.Lemon,
                         onImageClick = {
                             currentStep = 2
                             squeezeCount = (2..4).random()
@@ -93,7 +93,7 @@ fun LemonApp() {
                     LemonTextAndImage(
                         textLabel = R.string.Two,
                         drawableResource = R.drawable.lemon_squeeze,
-                        ContentDescription = R.string.Lemontree,
+                        contentDescription = R.string.Lemontree,
                         onImageClick = {
                             squeezeCount--
                             if (squeezeCount == 0) {
@@ -108,7 +108,7 @@ fun LemonApp() {
                     LemonTextAndImage(
                         textLabel = R.string.Three,
                         drawableResource = R.drawable.lemon_drink,
-                        ContentDescription = R.string.Glassfull,
+                        contentDescription = R.string.Glassfull,
                         onImageClick = { currentStep = 4 })
 
                 }
@@ -117,7 +117,7 @@ fun LemonApp() {
                     LemonTextAndImage(
                         textLabel = R.string.Four,
                         drawableResource = R.drawable.lemon_restart,
-                        ContentDescription = R.string.Glassempty,
+                        contentDescription = R.string.Glassempty,
                         onImageClick = { currentStep = 1 })
 
                 }
@@ -130,7 +130,7 @@ fun LemonApp() {
 fun LemonTextAndImage(
     textLabel: Int,
     drawableResource: Int,
-    ContentDescription: Int,
+    contentDescription: Int,
     onImageClick: () -> Unit, //it has no datatype and returns nothing.
     modifier: Modifier = Modifier
 ) {
@@ -151,7 +151,7 @@ fun LemonTextAndImage(
         ) {
             Image(
                 painter = painterResource(drawableResource),
-                contentDescription = stringResource(ContentDescription),
+                contentDescription = stringResource(contentDescription),
                 modifier = Modifier.wrapContentSize())
         }
         Spacer(modifier = Modifier.height(16.dp))
